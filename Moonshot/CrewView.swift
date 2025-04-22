@@ -13,7 +13,7 @@ struct CrewView: View {
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
             HStack {
-                ForEach(crew, id: \.role) { crewMember in
+                ForEach(crew, id: \.astronaut.id) { crewMember in
                     NavigationLink(value: crewMember) {
                         HStack {
                             Image(crewMember.astronaut.id)

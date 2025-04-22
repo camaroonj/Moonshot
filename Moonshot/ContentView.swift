@@ -53,11 +53,16 @@ struct ContentView: View {
                 }
                 .padding([.horizontal, .bottom])
             }
+            
             .navigationTitle("Moonshot")
             .background(.darkBackground)
             .preferredColorScheme(.dark)
+            .navigationDestination(for: MissionView.CrewMember.self) { crewMember in
+                AstronautView(astronaut: crewMember.astronaut)
+        }
         }
     }
+       
 }
 
 #Preview {

@@ -31,7 +31,7 @@ struct MissionView: View {
                         .font(.title)
                         .padding(.bottom, 10)
                 }
-
+                
                 Rectangle()
                     .frame(height: 2)
                     .foregroundStyle(.lightBackground)
@@ -42,7 +42,7 @@ struct MissionView: View {
                     Text("\(mission.displayName) Highlights")
                         .font(.title.bold())
                         .padding(.bottom, 10)
-
+                    
                     Text(mission.description)
                     
                     Rectangle()
@@ -56,15 +56,10 @@ struct MissionView: View {
                 }
                 .padding(.horizontal)
                 
-              
-                
                 CrewView(crew: crew)
+                
             }
-            
             .padding(.bottom)
-        }
-        .navigationDestination(for: CrewMember.self) { crewMember in
-            AstronautView(astronaut: crewMember.astronaut)
         }
         .navigationTitle(mission.displayName)
         .navigationBarTitleDisplayMode(.inline)
